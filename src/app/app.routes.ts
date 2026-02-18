@@ -9,6 +9,7 @@ import { Viewcustomer } from './page/customer/viewcustomer/viewcustomer';
 import { Additem } from './page/item/additem/additem';
 import { ViewOrder } from './page/order/view-order/view-order';
 import { AddOrder } from './page/order/add-order/add-order';
+import { Home } from './page/dashboard/home/home';
 
 export const routes: Routes = [
     {
@@ -16,51 +17,55 @@ export const routes: Routes = [
         component:Login,
     },
     {
-        path: "/login",
+        path: "login",
         component:Login,
     },
     {
-        path:"/dashboard",
+        path:"dashboard",
         component:Dashboard,
         children:[
         {
-            path:"/customer",
+            path:"",
+            component: Home,
+        },
+        {
+            path:"customer",
             component:Customer,
             children:[
                 {
-                    path:"/addcustomer",
+                    path:"addcustomer",
                     component:Addcustomer,
                 },
                 {
-                    path:"/viewcustomer",
+                    path:"viewcustomer",
                     component:Viewcustomer,
                 },
             ]
         },
         {
-            path:"/item",
+            path:"item",
             component:Item,
             children:[
                 {
-                    path:"/additem",
+                    path:"additem",
                     component:Additem,
                 },
                 {
-                    path:"/viewitem",
+                    path:"viewitem",
                     component:ViewOrder,
                 },
             ]
         },
         {
-            path:"/order",
+            path:"order",
             component:Order,
             children:[
                 {
-                    path:"/addorder",
+                    path:"addorder",
                     component:AddOrder,
                 },
                 {
-                    path:"/vieworder",
+                    path:"vieworder",
                     component:ViewOrder,
                 },
             ]
